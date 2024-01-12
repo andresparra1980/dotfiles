@@ -23,7 +23,7 @@
     "custom/arch": {
         "format":"  ",
       "tooltip": false,
-      "on-click": "rofi -show drun"
+      "on-click": "thunar"
     },
     "custom/powermenu": {
         "format":" ⏻ ",
@@ -79,12 +79,12 @@
         "on-click": "pavucontrol &"
     },
     "network": {
-        /* "format-wifi": "直", */
-        "format-wifi": " {icon}",
-        "format-ethernet": " ",
+        /*"format-wifi": "直", */
+        "format-wifi": " {icon}->{frequency}GHz",
+        "format-ethernet": "  ",
         "format-disconnected": "睊",
         "tooltip-format": "{essid}",
-        "on-click": "~/.config/rofi/nm-applet/rofi-network-manager.sh",
+        "on-click": "",
         "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤢 ","󰤨 "]
     },
     "clock": {

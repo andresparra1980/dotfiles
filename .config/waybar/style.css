@@ -1,9 +1,10 @@
+@import "colors-waybar.css";
 * {
   font-family: Ubuntu Nerd Font;
   font-weight: normal;
   font-size: 14px;
   min-height: 0;
-  color: #cdd6f4;
+  color: @color7;
 }
 #window,
 #clock,
@@ -16,45 +17,45 @@
 #custom-powermenu,
 #custom-spotify,
 #custom-arch {
-  background-color:  #1e1e2e;
+  background-color:  @color0;
   margin-top: 2px;
   margin-bottom: 0px;
   padding: 3px;
 }
 #tray {
-border: 2px solid #9999CC
+border: 2px solid @color1
 }
 #custom-arch {
-border: 2px solid #9999CC ;
+border: 2px solid @color1 ;
 border-radius: 10px 10px 10px 10px;
 }
 #custom-powermenu {
-border: 2px solid #9999CC ;
+border: 2px solid @color1 ;
 border-radius: 10px 10px 10px 10px;
 }
 #custom-spotify {
 margin-left: 3px ;
-border: 2px solid #9999CC ;
+border: 2px solid @color1 ;
 border-radius: 10px 10px 10px 10px; 
 }
 #workspaces {
-border: 2px solid #9999CC ;
+border: 2px solid @color1 ;
 }
 #clock {
-border-right: 2px solid #9999CC;
-border-top: 2px solid #9999CC;
-border-bottom: 2px solid #9999CC
+border-right: 2px solid @color1;
+border-top: 2px solid @color1;
+border-bottom: 2px solid @color1
 }
 #network {
-border-left: 2px solid #9999CC;
-border-top: 2px solid #9999CC;
-border-bottom: 2px solid #9999CC
+border-left: 2px solid @color1;
+border-top: 2px solid @color1;
+border-bottom: 2px solid @color1
 }
 #backlight,
 #battery,
 #pulseaudio {
-border-top: 2px solid #9999CC;
-border-bottom: 2px solid #9999CC
+border-top: 2px solid @color1;
+border-bottom: 2px solid @color1
 }
 #tray {
   border-radius: 10px 10px 10px 10px;  
