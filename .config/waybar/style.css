@@ -6,12 +6,15 @@
   min-height: 0;
   color: @color7;
 }
-#window,
+#custom-r_end,
+#custom-l_end,
+#taskbar,
 #clock,
 #tray,
 #backlight,
 #pulseaudio,
 #battery,
+#temperature,
 #network,
 #workspaces,
 #custom-powermenu,
@@ -22,13 +25,13 @@
   margin-bottom: 0px;
   padding: 3px;
 }
-#tray {
+/*#tray {
 border: 2px solid @color1
-}
-#custom-arch {
+}*/
+/*#custom-arch {
 border: 2px solid @color1 ;
 border-radius: 10px 10px 10px 10px;
-}
+}*/
 #custom-powermenu {
 border: 2px solid @color1 ;
 border-radius: 10px 10px 10px 10px;
@@ -38,41 +41,54 @@ margin-left: 3px ;
 border: 2px solid @color1 ;
 border-radius: 10px 10px 10px 10px; 
 }
+/*#window,
 #workspaces {
 border: 2px solid @color1 ;
-}
-#clock {
+}*/
+
+/*#clock {
 border-right: 2px solid @color1;
 border-top: 2px solid @color1;
 border-bottom: 2px solid @color1
 }
+#temperature,
 #network {
 border-left: 2px solid @color1;
 border-top: 2px solid @color1;
 border-bottom: 2px solid @color1
-}
+}*/
+#custom-arch,
+#tray,
+#temperature,
+#clock,
+#taskbar,
+#workspaces,
 #backlight,
 #battery,
 #pulseaudio {
 border-top: 2px solid @color1;
 border-bottom: 2px solid @color1
 }
-#tray {
+/*#tray {
   border-radius: 10px 10px 10px 10px;  
   margin-right: 3px;
-}
+}*/
+/*#temperature,
 #network {
 border-radius: 10px 0px 0px 10px;
 }
 #clock{
-    border-radius: 0px 10px 10px 0px}
-#custom-arch {
-margin-left: 3px; }
-#clock {
+    border-radius: 0px 10px 10px 0px}*/
+/*#custom-arch {
+margin-left: 3px; }*/
+/*#clock {
   font-weight: bold;
   margin-right: 3px;
+}*/
+#taskbar {
+  font-weight: bold;
 }
-#window {
+/*#window {
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
 padding-left: 3px;
@@ -85,13 +101,46 @@ padding-right: 3px;
 #workspaces button.active {
     color: white;
 }
-
 #workspaces button.focused {
     color: white;
   }
 #workspaces {
    border-radius: 10px 10px 10px 10px;
+}*/
+#taskbar button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: @color4;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
+
+#taskbar button.active {
+  background: @color5;
+  color: @color1;
+  margin-left: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+  background: @color5;
+  color: @color1;
+  padding-left: 3px;
+  padding-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
 button {
   min-width: 16px;
 }
@@ -99,4 +148,42 @@ window#waybar {
   /* you can also GTK3 CSS functions! */
   background-color: transparent;
   border-radius: 10px 10px 10px 10px;
+}
+
+#custom-r_end {
+  border-radius: 0px 10px 10px 0px;
+  border-right: 2px solid @color1;
+  border-top: 2px solid @color1;
+  border-bottom: 2px solid @color1
+}
+
+#custom-l_end {
+  border-radius: 10px 0px 0px 10px;
+  border-left: 2px solid @color1;
+  border-top: 2px solid @color1;
+  border-bottom: 2px solid @color1
+}
+
+#custom-sr_end {
+  border-radius: 0px;
+  margin-right: 9px;
+  padding-right: 3px;
+}
+
+#custom-sl_end {
+  border-radius: 0px;
+  margin-left: 9px;
+  padding-left: 3px;
+}
+
+#custom-rr_end {
+  border-radius: 0px 7px 7px 0px;
+  margin-right: 9px;
+  padding-right: 3px;
+}
+
+#custom-rl_end {
+  border-radius: 7px 0px 0px 7px;
+  margin-left: 9px;
+  padding-left: 3px;
 }

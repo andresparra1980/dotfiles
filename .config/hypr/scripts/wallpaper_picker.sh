@@ -4,8 +4,8 @@
 WalPath=~/.config/hypr/wallpapers/
 
 # lauch Rofi dmenu
-cd $WalPath
-WALLPAPER=$(ls *{jpg,png} | rofi -dmenu -p "Select a Wallpaper")
+# cd $WalPath
+WALLPAPER=$(ls ~/.config/hypr/wallpapers/*{jpg,png} | rofi -dmenu -p "Select a Wallpaper")
 if [[ -z $WALLPAPER ]] # validate that wallpaper was selected
 then
 	exit
@@ -21,4 +21,4 @@ killall waybar && waybar >> /dev/null & disown
 sed -i '1 c \preload = '"$WALLPAPER"'' ~/.config/hypr/hyprpaper.conf
 sed -i '2 c \wallpaper = eDP-1, '"$WALLPAPER"'' ~/.config/hypr/hyprpaper.conf
 killall hyprpaper && hyprpaper >> /dev/null & disown
-
+makoctl reload

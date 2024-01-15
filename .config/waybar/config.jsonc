@@ -8,20 +8,32 @@
     "passtrough": false,
     "height": 10,
     "modules-left": [
-        "custom/arch"
+        "custom/l_end",
+        "custom/arch",
+        "custom/r_end"
     ],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": [
+        "custom/l_end",
+        "hyprland/workspaces",
+        "wlr/taskbar",
+        "custom/r_end"
+    ],
     "modules-right": [
+        "custom/l_end",
         "tray",
-        "network",
-	"backlight",
+        "custom/r_end",
+        //"network",
+        "custom/l_end",
+        "temperature",
+	    "backlight",
         "battery",
         "pulseaudio",
         "clock",
+        "custom/r_end",
         "custom/powermenu"
     ],
     "custom/arch": {
-        "format":"  ",
+        "format":"  ",
       "tooltip": false,
       "on-click": "thunar"
     },
@@ -64,25 +76,45 @@
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
         "on-click": "activate",
         "format": "{icon}"
-     },
+    },
+    "wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 13,
+		"icon-theme": "capitaine-cursors",
+        "spacing": 0,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		/*"ignore-list": [
+			"Alacritty"
+		],*/
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition"
+		}
+	},
     "tray": {
-        "icon-size": 13,
+        "icon-size": 16,
         "tooltip": false,
         "spacing": 10
     },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon}{volume}%",
         "format-muted": " 󰖁 ",
         "format-icons": {
             "default": ["  ", "  ", "  "]
         },
         "on-click": "pavucontrol &"
     },
+    "temperature": {
+        "interval": 10,
+            "hwmon-path": "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input",
+        "format": " {temperatureC}°C"
+    },
     "network": {
         /*"format-wifi": "直", */
         "format-wifi": " {icon}->{frequency}GHz",
         "format-ethernet": "  ",
-        "format-disconnected": "睊",
+        "format-disconnected": "",
         "tooltip-format": "{essid}",
         "on-click": "",
         "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤢 ","󰤨 "]
@@ -90,6 +122,49 @@
     "clock": {
         "format": "{:󰥔 %R} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    // modules for padding //
+
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
     }
 }
 
