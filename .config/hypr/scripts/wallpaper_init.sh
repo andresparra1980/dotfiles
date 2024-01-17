@@ -4,7 +4,7 @@
 WallPath=~/.config/hypr/wallpapers/
 
 cd $WallPath
-WallPaper=1271789.png
+WallPaper=$(cat ~/.config/hypr/scripts/current_wallpaper)
 # run pywal
 wal -i $WallPaper >> /dev/null
 
@@ -12,7 +12,7 @@ wal -i $WallPaper >> /dev/null
 killall waybar && waybar >> /dev/null & disown 
 
 # repopulate and re-run Hyprpaper
-sed -i '1 c \preload = '"$WallPaper"'' ~/.config/hypr/hyprpaper.conf
-sed -i '2 c \wallpaper = eDP-1, '"$WallPaper"'' ~/.config/hypr/hyprpaper.conf
-killall hyprpaper && hyprpaper >> /dev/null & disown
+sed -i '1 c \preload = '"$WallPath"''"$WallPaper"'' ~/.config/hypr/hyprpaper.conf
+sed -i '2 c \wallpaper = eDP-1, '"$WallPath"''"$WallPaper"'' ~/.config/hypr/hyprpaper.conf
+hyprpaper >> /dev/null & disown
 makoctl reload

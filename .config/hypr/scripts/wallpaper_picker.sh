@@ -4,13 +4,14 @@
 WalPath=~/.config/hypr/wallpapers/
 
 # lauch Rofi dmenu
-# cd $WalPath
-WALLPAPER=$(ls ~/.config/hypr/wallpapers/*{jpg,png} | rofi -dmenu -p "Select a Wallpaper")
+cd $WalPath
+WALLPAPER=$(ls *{jpg,png} | rofi -dmenu -p "Select a Wallpaper")
 if [[ -z $WALLPAPER ]] # validate that wallpaper was selected
 then
 	exit
 fi
-
+# save wallaper
+sed -i '1 c \'"$WALLPAPER"'' ~/.config/hypr/scripts/current_wallpaper
 # run pywal
 wal -i $WALLPAPER >> /dev/null
 
